@@ -3,7 +3,13 @@
     box-sizing: border-box;
 }
 
-#logo{ 
+#logo { 
 	position:fixed; 
 	top:0; 
 	left:0; 
+}
+
+.modal {
+	text-align: center;
+	font-size: 125%;
+}
