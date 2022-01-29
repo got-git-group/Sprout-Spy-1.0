@@ -3,7 +3,6 @@
     box-sizing: border-box;
 }
 
-
 ul {
     margin-right: 2vw;
 }
@@ -26,7 +25,8 @@ img {
     margin: auto;
 }
 
-#logo{ 
+#logo { 
 	position:fixed; 
 	top:0; 
 	left:0;
+}
