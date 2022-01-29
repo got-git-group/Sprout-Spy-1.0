@@ -13,3 +13,25 @@
 	text-align: center;
 	font-size: 125%;
 }
+
+ul {
+    margin-right: 2vw;
+}
+
+.navList li {
+    position: relative;
+    margin: 10px;
+    font-size: 22px;
+    float: right;
+}
+
+body {
+    background-color: #ffc4e1;
+}
+
+img {
+    display: flex;
+    opacity: 0.8;
+    border-radius: 1%;
+    margin: auto;
+}
