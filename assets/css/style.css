@@ -3,6 +3,17 @@
     box-sizing: border-box;
 }
 
+#logo { 
+	position:fixed; 
+	top:0; 
+	left:0; 
+}
+
+.modal {
+	text-align: center;
+	font-size: 125%;
+}
+
 ul {
     margin-right: 2vw;
 }
@@ -23,10 +34,4 @@ img {
     opacity: 0.8;
     border-radius: 1%;
     margin: auto;
-}
-
-#logo { 
-	position:fixed; 
-	top:0; 
-	left:0;
 }

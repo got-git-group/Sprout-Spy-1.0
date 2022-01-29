@@ -18,4 +18,5 @@ $modal.dialog({
           }
       }
     ],
+    minWidth: 400,
   });
