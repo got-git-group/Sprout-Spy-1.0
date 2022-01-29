@@ -3,9 +3,11 @@
     box-sizing: border-box;
 }
 
+
 ul {
     margin-right: 2vw;
 }
+
 .navList li {
     position: relative;
     margin: 10px;
@@ -24,3 +26,7 @@ img {
     margin: auto;
 }
 
+#logo{ 
+	position:fixed; 
+	top:0; 
+	left:0;
