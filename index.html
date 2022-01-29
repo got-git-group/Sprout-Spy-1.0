@@ -15,7 +15,24 @@
 <body>
     <main>
         <header class="hero" id="gardenImage"><img src="images\projectPhoto.jpg"></img></header>
-
+    
+    <!-- Logo top left corner -->
+    <div id="logo"> 
+        <img src="http://via.placeholder.com/150x150"> 
+    </div> 
+<!-- CSS for logo for top left corner -->
+<!-- //#logo{ 
+	position:fixed; 
+	top:0; 
+	left:0; 
+} -->    
+        
+        <!-- header/instructions Placeholder -->
+    <div id="instructions" class="jumbotron">
+        <div id="jumboContainer" class="container">
+          <h1 class="display-4"></h1>
+          <p class="Plantinstructions"></p>
+        </div>
 
 
 
@@ -35,7 +52,21 @@
 
 
 
+<!--The div element for the map -->
+<form>
+<label for="zip">Zipcode:</label><br>
+<input id="zip" name="zip" type="text" pattern="[0-9]*">
+<input type="submit" value="Submit">
+</form>
+<div id="localgardenmap"></div>
 
+<!--The div element for the map -->
+<form>
+    <label for="zip">Zipcode:</label><br>
+    <input id="zip" name="zip" type="text" pattern="[0-9]*">
+    <input type="submit" value="Submit">
+    </form>
+<div id="map"></div>
 
 
 

@@ -2,3 +2,8 @@
     font-family: 'Gamja Flower', cursive;
     box-sizing: border-box;
 }
+
+#logo{ 
+	position:fixed; 
+	top:0; 
+	left:0; 
