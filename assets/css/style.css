@@ -35,3 +35,9 @@ img {
     border-radius: 1%;
     margin: auto;
 }
+
+// Styling to make map section visible.
+#localgardenmap {
+    height: 400px;
+    width: 50%;
+}
