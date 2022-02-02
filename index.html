@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+            <!-- navbar and background image -->
     <header class="hero" id="gardenImage">
         <nav class="headerNav">
             <ul class="navList">
@@ -29,11 +29,11 @@
     
     <main>   
     	    <!-- Logo top left corner -->
-	    <img id="logo"> 
-		    <img src="http://via.placeholder.com/150x150"> 
-        </img>
+	    <!-- <img id="logo"> 
+		    <img src="http://via.placeholder.com/75x75"> 
+        </img> -->
 
-		    <!-- header/instructions Placeholder -->
+		    <!-- Header/instructions placeholder -->
 	    <section id="instructions" class="jumbotron">
             <section id="jumboContainer" class="container">
                 <h1 class="display-4"></h1>
@@ -41,7 +41,7 @@
             </section>
 	    </section>
 
-		    <!-- modal -->
+		    <!-- Modal -->
 	    <section class="modal" title="Welcome to Green Thumb">
             <p>We are so excited to have you here to learn about gardening!</p>
             <p>Are you ready to become a Green Thumb?</p>
@@ -49,22 +49,19 @@
 
 		    <!--The div element for the map -->
 	    <form>
-            <label for="zip">Zipcode:</label><br>
+            <label for="zip" id="text1">Local Garden Map</label><br>
             <input id="zip" name="zip" type="text" pattern="[0-9]*">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="button1">
         </form>
 	    <section id="localgardenmap"></section>
 
 		    <!--The div element for the map -->
 	    <form>
-            <label for="zip">Zipcode:</label><br>
+            <label for="zip" id="text2">National Garden Map</label><br>
             <input id="zip" name="zip" type="text" pattern="[0-9]*">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="button2">
         </form>
 	    <section id="map"></section>
-
-
-
 
     </main>
     
