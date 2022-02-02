@@ -8,12 +8,12 @@
 	top:0; 
 	left:0; 
 }
-<<<<<<< HEAD
+
 .header {
     padding: 60px;
     text-align: center;
     background: #92D293;
-=======
+}
 
 .modal {
 	text-align: center;
@@ -46,5 +46,4 @@ img {
 #localgardenmap {
     height: 400px;
     width: 50%;
->>>>>>> main
 }
