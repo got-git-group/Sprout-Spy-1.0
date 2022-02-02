@@ -32,12 +32,28 @@ var initMap = function () {
     zoom: 11
   });
 
+  const infowindow = new google.maps.InfoWindow();
+  
   function createMarker(place) {
     if (!place.geometry || !place.geometry.location) return;
 
     const marker = new google.maps.Marker({
       map,
       position: place.geometry.location,
+    });
+    // open a pop-up window to display address for the marker.
+    google.maps.event.addListener(marker, 'click', () => {
+      const content = document.createElement('div');
+      const nameElement = document.createElement('h2');
+      const addressElement = document.createElement('p');
+
+      nameElement.textContent = place.name;
+      addressElement.textContent = place.formatted_address;
+
+      content.appendChild(nameElement);
+      content.appendChild(addressElement);
+      infowindow.setContent(content);
+      infowindow.open(map, marker);
     });
   }
 
