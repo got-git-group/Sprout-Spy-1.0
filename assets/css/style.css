@@ -4,9 +4,15 @@
 }
 
 #logo { 
-	position:fixed; 
+	position: fixed; 
 	top:0; 
 	left:0; 
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #92D293;
 }
 
 .modal {
@@ -18,6 +24,10 @@ ul {
     margin-right: 2vw;
 }
 
+#gardenImage {
+    margin-top: 23px;
+}
+
 .navList li {
     position: relative;
     margin: 10px;
@@ -26,7 +36,10 @@ ul {
 }
 
 body {
-    background-color: #ffc4e1;
+    background-image: linear-gradient(
+        #ffc4e1,
+        #ccb7e5,
+        #d4f0f7 100%);
 }
 
 img {
@@ -34,6 +47,13 @@ img {
     opacity: 0.8;
     border-radius: 1%;
     margin: auto;
+}
+
+form {
+    text-align: center;
+    margin:5px;
+    padding: 5px;
+    font-size: 25px;
 }
 
  /* Styling to make map section visible. */
