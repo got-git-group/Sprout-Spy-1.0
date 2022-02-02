@@ -3,13 +3,48 @@
     box-sizing: border-box;
 }
 
-#logo{ 
+#logo { 
 	position:fixed; 
 	top:0; 
 	left:0; 
 }
+<<<<<<< HEAD
 .header {
     padding: 60px;
     text-align: center;
     background: #92D293;
+=======
+
+.modal {
+	text-align: center;
+	font-size: 125%;
+}
+
+ul {
+    margin-right: 2vw;
+}
+
+.navList li {
+    position: relative;
+    margin: 10px;
+    font-size: 22px;
+    float: right;
+}
+
+body {
+    background-color: #ffc4e1;
+}
+
+img {
+    display: flex;
+    opacity: 0.8;
+    border-radius: 1%;
+    margin: auto;
+}
+
+ /* Styling to make map section visible. */
+#localgardenmap {
+    height: 400px;
+    width: 50%;
+>>>>>>> main
 }

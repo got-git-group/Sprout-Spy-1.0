@@ -12,65 +12,72 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Sprout Scout</title>
 </head>
+
 <body>
-    
-    <header class="hero" id="gardenImage"><img src="images\projectPhoto.jpg"></img></header>
-    
-    <!-- Logo top left corner -->
-    <div id="logo"> 
-        <img src="http://via.placeholder.com/150x150"> 
-    </div> 
-<!-- CSS for logo for top left corner -->
-<!-- //#logo{ 
-	position:fixed; 
-	top:0; 
-	left:0; 
-} -->    
-    
-        <!-- header/instructions Placeholder -->
-    <div id="instructions" class="jumbotron">
-        <div id="jumboContainer" class="container">
-            <img src="" alt="" srcset="" id="weather-icon">
-            <div id="location">Unable to Fetch Weather</div>
-            <div class="desc">No Information Available Yet.</div>
-            <div class="weather">
-                <div class="c">Error</div>
-                <div class="circle"></div>
-                <div class="f">Error</div>
-            </div>
-            <div class= "info">
-                <h1>Sunrise: <span class="sunrise">No Information Available Yet</span></h1>
-                <h1>Sunset: <span class="sunet">No Information Available Yet</span></h1>
+
+    <header class="hero" id="gardenImage">
+        <div id="instructions" class="jumbotron">
+            <div id="jumboContainer" class="container">
+                <img src="" alt="" srcset="" id="weather-icon">
+                <div id="location">Unable to Fetch Weather</div>
+                <div class="desc">No Information Available Yet.</div>
+                <div class="weather">
+                    <div class="c">Error</div>
+                    <div class="circle"></div>
+                    <div class="f">Error</div>
+                </div>
+                <div class= "info">
+                    <h1>Sunrise: <span class="sunrise">No Information Available Yet</span></h1>
+                    <h1>Sunset: <span class="sunet">No Information Available Yet</span></h1>
+                </div>
             </div>
         </div>
-    </div>
+        <nav class="headerNav">
+            <ul class="navList">
+                <li>pHolder</li>
+                <li>pHolder</li>
+                <li>pHolder</li>
+                <li>pHolder</li>
+            </ul>
+        </nav>
+        <img src="images\projectPhoto.jpg" style="width: 95vw; height: 475px;"></img>
+    </header>
+    
+    <main>   
+    	    <!-- Logo top left corner -->
+	    <img id="logo"> 
+		    <img src="http://via.placeholder.com/150x150"> 
+        </img>
 
-    <main>
+		    <!-- header/instructions Placeholder -->
+	    <section id="instructions" class="jumbotron">
+            <section id="jumboContainer" class="container">
+                <h1 class="display-4"></h1>
+                <p class="Plantinstructions"></p>
+            </section>
+	    </section>
 
-<!-- modal -->
-    <section class="modal" title="Welcome to Green Thumb">
-        <p>We are so excited to have you here to learn about gardening!</p>
-        <p>Are you ready to become a Green Thumb?</p>
-    </section>
+		    <!-- modal -->
+	    <section class="modal" title="Welcome to Green Thumb">
+            <p>We are so excited to have you here to learn about gardening!</p>
+            <p>Are you ready to become a Green Thumb?</p>
+	    </section>
 
+		    <!--The div element for the map -->
+	    <form>
+            <label for="zip">Zipcode:</label><br>
+            <input id="zip" name="zip" type="text" pattern="[0-9]*">
+            <input type="submit" value="Submit">
+        </form>
+	    <section id="localgardenmap"></section>
 
-
-
-<!--The div element for the map -->
-    <form>
-        <label for="zip">Zipcode:</label><br>
-        <input id="zip" name="zip" type="text" pattern="[0-9]*">
-        <input type="submit" value="Submit">
-    </form>
-    <div id="localgardenmap"></div>
-
-<!--The div element for the map -->
-    <form>
-        <label for="zip">Zipcode:</label><br>
-        <input id="zip" name="zip" type="text" pattern="[0-9]*">
-        <input type="submit" value="Submit">
-    </form>
-    <div id="map"></div>
+		    <!--The div element for the map -->
+	    <form>
+            <label for="zip">Zipcode:</label><br>
+            <input id="zip" name="zip" type="text" pattern="[0-9]*">
+            <input type="submit" value="Submit">
+        </form>
+	    <section id="map"></section>
 
 
 
@@ -79,6 +86,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIbBrG_X6bfdgaSs7u-AHnysix2GZ86-4&callback=initMap"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>
