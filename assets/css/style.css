@@ -9,6 +9,12 @@
 	left:0; 
 }
 
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #92D293;
+}
+
 .modal {
 	text-align: center;
 	font-size: 125%;
@@ -48,4 +54,10 @@ form {
     margin:5px;
     padding: 5px;
     font-size: 25px;
+}
+
+ /* Styling to make map section visible. */
+#localgardenmap {
+    height: 400px;
+    width: 50%;
 }
