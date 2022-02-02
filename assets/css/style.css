@@ -42,11 +42,16 @@ body {
         #d4f0f7 100%);
 }
 
+.info {
+    font-size: 10px;
+}
+
 img {
     display: flex;
     opacity: 0.8;
     border-radius: 1%;
     margin: auto;
+    flex-direction: column;
 }
 
 form {
