@@ -20,20 +20,20 @@
 	font-size: 125%;
 }
 
-ul {
+/* ul {
     margin-right: 2vw;
-}
+} */
 
 #gardenImage {
     margin-top: 23px;
 }
 
-.navList li {
+/* .navList li {
     position: relative;
     margin: 10px;
     font-size: 22px;
     float: right;
-}
+} */
 
 body {
     background-image: linear-gradient(
@@ -60,4 +60,7 @@ form {
 #localgardenmap {
     height: 400px;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
