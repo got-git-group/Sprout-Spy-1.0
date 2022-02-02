@@ -60,6 +60,17 @@ img {
     border-bottom: solid 2px;
 }
 
+#zip {
+    width: 30vw;
+    margin: auto;
+}
+
+#button1 {
+    width:80px;
+    margin:auto;
+    font-size: 20px;
+}
+
 form {
     margin:auto;
     /* margin:5px; */
