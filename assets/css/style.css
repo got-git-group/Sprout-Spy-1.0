@@ -18,6 +18,10 @@ ul {
     margin-right: 2vw;
 }
 
+#gardenImage {
+    margin-top: 23px;
+}
+
 .navList li {
     position: relative;
     margin: 10px;
