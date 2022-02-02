@@ -9,7 +9,6 @@
 ## General info
 
 Our project, "Sprout Scout", is an application that will help new or future gardeners understand what kinds of seeds and cuttings can be planted in their local
-
 planting zone, as well as search for local public gardens for those who do not have planting space in their area. Our application will also display the day's current weather to plan your trip to your local garden accordingly.
 
 
