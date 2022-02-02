@@ -59,6 +59,8 @@ form {
     margin:5px;
     padding: 5px;
     font-size: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
  /* Styling to make map section visible. */
