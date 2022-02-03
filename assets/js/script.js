@@ -30,7 +30,6 @@ $modal.dialog({
 });
 
 // Google maps
-
 var initMap = function () {
 
   map = new google.maps.Map(document.getElementById('localgardenmap'), {
