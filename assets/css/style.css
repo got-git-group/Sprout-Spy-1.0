@@ -87,6 +87,23 @@ form {
 #localgardenmap {
     height: 400px;
     width: 50%;
+}
+
+
+
+
+
+
+
+
+/* idk why these aren't styling the glossary list.... */
+.glossary {
+    list-style-type: circle;
+    width: 80vw;
+}
+
+.subGlossary {
+    list-style-type: disc;
     display: flex;
     flex-direction: column;
     margin: auto;
