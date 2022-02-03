@@ -1,5 +1,6 @@
-// creating modal variable
+// creating Welcome modal and zipmodal variable
 var $modal = $(".modal");
+var $zipModal = $(".zipModal");
 // Coords to center the map initially
 var coords = { lat: 47.6142, lng: -122.1937 };
 // creating input variable and search button variable
@@ -88,7 +89,16 @@ var initMap = function () {
 searchBtn.addEventListener("click", function(event) {
   event.preventDefault();
   getZip = zipInput.value.trim();
-  console.log(getZip);
+  if (getZip.length !== 5) {
+    // zipModal displays if zipcode entry is !5 character
+    $zipModal.dialog({
+    modal: true,
+    minWidth: 400,
+    }) 
+  } else {
+      console.log(getZip);
   // this is optional, if we don't want to store zipcodes we can scratch this
   localStorage.setItem("zip", JSON.stringify(getZip));
+  };
+  
 });
