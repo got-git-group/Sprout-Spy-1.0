@@ -1,5 +1,5 @@
 * {
-    font-family: 'Gamja Flower', cursive;
+    font-family: Calibri;
     box-sizing: border-box;
 }
 
@@ -118,4 +118,11 @@ li {
     flex-direction: column;
     margin: auto;
     padding-top: 25px;
+}
+
+
+@media only screen and (max-width: 850px) {
+    .subGlossary {
+        margin-right: 50px;
+    }
 }
