@@ -46,7 +46,7 @@ This project is created with:
 * Openweather API
 
 ## Screenshot
-![screenshot](./assets/images/ insert img url here)
+![screenshot](./assets/images/localgarden.jpg)
 ![screenshot](./assets/images/ insert img url here)
 
 ## Setup
