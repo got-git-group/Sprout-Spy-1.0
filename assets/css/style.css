@@ -44,6 +44,8 @@ body {
 
 .info {
     font-size: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 img {
@@ -51,7 +53,7 @@ img {
     opacity: 0.8;
     border-radius: 1%;
     margin: auto;
-    flex-direction: column;
+    flex-direction:column;
 }
 
 #text1 {
@@ -61,7 +63,7 @@ img {
 }
 
 #zip {
-    width: 30vw;
+    width: 15vw;
     margin: auto;
 }
 
