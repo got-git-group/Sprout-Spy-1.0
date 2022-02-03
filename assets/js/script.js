@@ -84,7 +84,7 @@ var initMap = function () {
 
 
 
-
+// ZIPCODE INPUT
 searchBtn.addEventListener("click", function(event) {
   event.preventDefault();
   getZip = zipInput.value.trim();
