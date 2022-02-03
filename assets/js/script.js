@@ -1,5 +1,6 @@
 // creating modal variable
 var $modal = $(".modal");
+
 // Coords to center the map initially
 var coords = { lat: 47.6142, lng: -122.1937 };
 // creating input variable and search button variable
@@ -29,7 +30,6 @@ $modal.dialog({
 });
 
 // Google maps
-
 var initMap = function () {
 
   map = new google.maps.Map(document.getElementById('localgardenmap'), {

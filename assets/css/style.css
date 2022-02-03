@@ -87,24 +87,35 @@ form {
 #localgardenmap {
     height: 400px;
     width: 50%;
+    margin:auto;
 }
 
-
-
-
-
-
-
+.results {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    text-align: center;
+}
 
 /* idk why these aren't styling the glossary list.... */
 .glossary {
     list-style-type: circle;
     width: 80vw;
+    margin: auto;
+    padding: 10px;
+}
+
+li {
+    padding: 10px;
+    font-size: 20px;
 }
 
 .subGlossary {
     list-style-type: disc;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 25px;
     flex-direction: column;
     margin: auto;
+    padding-top: 25px;
 }
