@@ -98,6 +98,15 @@ searchBtn.addEventListener("click", function(event) {
       console.log(getZip);
   // this is optional, if we don't want to store zipcodes we can scratch this
   localStorage.setItem("zip", JSON.stringify(getZip));
-  };
+  }
+  if (getZip[0].style.visibility === 'hidden') {
+    getZip[0].style.visibility = 'visible'
+  } else {
+    getZip[0].style.visibility = 'hidden'
+  }
   
 });
+
+function show() {
+  paraP = document.getElementById('hidden');
+}
