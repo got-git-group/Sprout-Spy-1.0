@@ -26,7 +26,7 @@ body {
         #d4f0f7 100%);
     font-family: 'Crimson Pro', serif;
     font-size: 18px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
             
@@ -35,7 +35,9 @@ body {
 #weather-wrapper {
     width: 400px;
     border-radius: 7px;
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
+    margin-top: -100;
+    position: relative;
 }
 
 #weather-wrapper .wrapper i {
