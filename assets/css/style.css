@@ -20,6 +20,10 @@
 	font-size: 125%;
 }
 
+.modal-backdrop {
+    background-color: green;
+}
+
 /* ul {
     margin-right: 2vw;
 } */
