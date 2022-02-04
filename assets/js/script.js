@@ -111,7 +111,7 @@ var geocode = function (request) {
       const { results } = result;
 
       map.setCenter(results[0].geometry.location);
-      
+
       console.log(results[0].geometry.location.lat());
       requestGardens.location.lat = results[0].geometry.location.lat();
       requestGardens.location.lng = results[0].geometry.location.lng();
@@ -149,7 +149,15 @@ searchBtn.addEventListener("click", function (event) {
     console.log(getZip);
     // this is optional, if we don't want to store zipcodes we can scratch this
     localStorage.setItem("zip", JSON.stringify(getZip));
-    geocode({address: getZip })
-  };
-
+    geocode({ address: getZip });
+    if ($zipModal.css('visibility') === 'hidden') {
+      $zipModal.css('visibility', 'visible');
+    } else {
+      $zipModal.css('visibility', 'hidden');
+    }
+  }
 });
+
+function show() {
+  paraP = document.getElementById('hidden');
+}
