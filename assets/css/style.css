@@ -26,6 +26,11 @@ body {
         #d4f0f7 100%);
 }
 
+h1 {
+    font-size: 20px;
+    margin-left: 12px;
+    font-family: cursive;
+}
 .info {
     font-size: 10px;
     display: flex;
