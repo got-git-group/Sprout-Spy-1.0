@@ -1,4 +1,4 @@
-# Got-git Project One
+# Got-git's Project One
 
 ## Table of contents
 * [General info](#general-info)
@@ -8,7 +8,7 @@
 
 ## General info
 
-Our project, "Sprout Scout", is an application that will help new or future gardeners understand what kinds of seeds and cuttings can be planted in their local
+Our project, "Sprout Spy", is an application that will help new or future gardeners understand what kinds of seeds and cuttings can be planted in their local
 planting zone, as well as search for local public gardens for those who do not have planting space in their area. Our application will also display the day's current weather to plan your trip to your local garden accordingly.
 
 
@@ -19,13 +19,14 @@ AS A future gardener
 I WANT: -to know what plants I can grow near me,
         -to get instructions for growing those plants
         -to find a community garden
+        -to know the current weather to plan the day accordingly
 SO THAT: I can start gardening with confidence
 ```
 <ins>Acceptance Criteria</ins>
 
 ```
-GIVEN I am using the Sprout Scouts website to learn how to garden 
-WHEN I open the Sprout Scouts website, 
+GIVEN I am using the Sprout Spy website to learn how to garden, 
+WHEN I open the Sprout Spy website, 
 THEN i see a a welcome modal that lightens the mood of anxious future gardeners.
 WHEN I click an answer for the modal, 
 THEN I am greeted by the Openweathermaps header, and google maps API to search for local gardens and local planting zone information.
@@ -46,7 +47,6 @@ This project is created with:
 
 ## Screenshot
 ![screenshot](./assets/images/localgarden.jpg)
-![screenshot](./assets/images/ insert img url here)
 
 ## Setup
 
