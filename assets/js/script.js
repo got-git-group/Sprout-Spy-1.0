@@ -187,16 +187,6 @@ var getAgZone = function (getZip) {
     link.innerText = "Click here to see what you can grow in your zone!";
     results.appendChild(link);
   });
-};
-    console.log(getZip);
-    // this is optional, if we don't want to store zipcodes we can scratch this
-    localStorage.setItem("zip", JSON.stringify(getZip));
-    geocode({ address: getZip });
-    if ($zipModal.css('visibility') === 'hidden') {
-      $zipModal.css('visibility', 'visible');
-    } else {
-      $zipModal.css('visibility', 'hidden');
-    }
-  }
-});
+}
+
 
