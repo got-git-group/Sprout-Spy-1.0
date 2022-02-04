@@ -9,10 +9,12 @@
 	left:0; 
 }
 
-.header {
+header {
     padding: 60px;
+    width: 100vw;
     text-align: center;
-    background: #92D293;
+    background-image: url('../images/projectPhoto.jpg');
+    background-size: 100vw 586px;
 }
 
 #gardenImage {
@@ -26,21 +28,19 @@ body {
         #d4f0f7 100%);
     font-family: 'Crimson Pro', serif;
     font-size: 18px;
-    /* display: flex; */
     align-items: center;
     justify-content: center;
             
 }
 
-#weather-wrapper {
+.weather-wrapper {
     width: 400px;
     border-radius: 7px;
-    /* background: rgb(255, 255, 255); */
-    margin-top: -100;
-    position: relative;
+    background-color: #b9e6de;
+    opacity: 0.8;
 }
 
-#weather-wrapper .wrapper i {
+.weather-wrapper .wrapper i {
     color: dodgerblue;
     font-size: 25px;
     font-weight: 600;
@@ -200,11 +200,9 @@ header .wrapper i {
 }
 
 img {
-    display: flex;
     opacity: 0.8;
     border-radius: 1%;
     margin: auto;
-    flex-direction:column;
 }
 
 #text1 {

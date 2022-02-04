@@ -18,6 +18,9 @@ var zipInput = document.querySelector("#zip");
 var searchBtn = document.querySelector("#button1");
 // will be used later to pull zip value
 var getZip;
+// variables for displaying zone results and creating appropriate link
+var zoneResults = document.querySelector(".zoneResults");
+var results = document.querySelector(".results");
 
 // Defines the request for community gardens
 var requestGardens = {
@@ -112,6 +115,7 @@ var geocode = function (request) {
 
       map.setCenter(results[0].geometry.location);
 
+
       console.log(results[0].geometry.location.lat());
       requestGardens.location.lat = results[0].geometry.location.lat();
       requestGardens.location.lng = results[0].geometry.location.lng();
@@ -135,6 +139,7 @@ var clear = function () {
   markers = [];
 }
 
+
 // ZIPCODE INPUT
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -146,10 +151,12 @@ searchBtn.addEventListener("click", function (event) {
       minWidth: 400,
     })
   } else {
+
     console.log(getZip);
     // this is optional, if we don't want to store zipcodes we can scratch this
     localStorage.setItem("zip", JSON.stringify(getZip));
     geocode({ address: getZip });
+    getAgZone(getZip);
     if ($zipModal.css('visibility') === 'hidden') {
       $zipModal.css('visibility', 'visible');
     } else {
@@ -157,7 +164,28 @@ searchBtn.addEventListener("click", function (event) {
     }
   }
 });
-
-function show() {
+  
+  var show = function() {
   paraP = document.getElementById('hidden');
 }
+
+// API to pull agricultural zone
+var getAgZone = function (getZip) {
+  // stitch the zipcode into the API URL
+  var agURL = "https://c0bra.api.stdlib.com/zipcode-to-hardiness-zone/?zipcode=" + getZip;
+
+  fetch(agURL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data)
+    zoneResults.textContent = "You live in Zone " + data.zone + "!";
+    // generate link to zone growing info
+    var link = document.createElement("a");
+    link.href = "https://www.gardenate.com/?zone=" + data.zone;
+    link.innerText = "Click here to see what you can grow in your zone!";
+    results.appendChild(link);
+  });
+}
+
