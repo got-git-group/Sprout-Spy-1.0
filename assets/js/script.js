@@ -8,6 +8,9 @@ var zipInput = document.querySelector("#zip");
 var searchBtn = document.querySelector("#button1");
 // will be used later to pull zip value
 var getZip;
+// variables for displaying zone results and creating appropriate link
+var zoneResults = document.querySelector(".zoneResults");
+var results = document.querySelector(".results");
 
 // modal
 $modal.dialog({
@@ -81,9 +84,6 @@ var initMap = function () {
 };
 
 
-
-
-
 // ZIPCODE INPUT
 searchBtn.addEventListener("click", function(event) {
   event.preventDefault();
@@ -99,5 +99,27 @@ searchBtn.addEventListener("click", function(event) {
   // this is optional, if we don't want to store zipcodes we can scratch this
   localStorage.setItem("zip", JSON.stringify(getZip));
   };
+  getAgZone(getZip);
   
 });
+
+
+// API to pull agricultural zone
+var getAgZone = function (getZip) {
+  // stitch the zipcode into the API URL
+  var agURL = "https://c0bra.api.stdlib.com/zipcode-to-hardiness-zone/?zipcode=" + getZip;
+
+  fetch(agURL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data)
+    zoneResults.textContent = "You live in Zone " + data.zone + "!";
+    // generate link to zone growing info
+    var link = document.createElement("a");
+    link.href = "https://www.gardenate.com/?zone=" + data.zone;
+    link.innerText = "Click here to see what you can grow in your zone!";
+    results.appendChild(link);
+  });
+};
