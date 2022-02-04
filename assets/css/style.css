@@ -15,29 +15,9 @@
     background: #92D293;
 }
 
-.modal {
-	text-align: center;
-	font-size: 125%;
-}
-
-.modal-backdrop {
-    background-color: green;
-}
-
-/* ul {
-    margin-right: 2vw;
-} */
-
 #gardenImage {
     margin-top: 23px;
 }
-
-/* .navList li {
-    position: relative;
-    margin: 10px;
-    font-size: 22px;
-    float: right;
-} */
 
 body {
     background-image: linear-gradient(
@@ -101,7 +81,6 @@ form {
     text-align: center;
 }
 
-/* idk why these aren't styling the glossary list.... */
 .glossary {
     list-style-type: circle;
     width: 80vw;
