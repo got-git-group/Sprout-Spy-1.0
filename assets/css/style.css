@@ -120,9 +120,21 @@ li {
     padding-top: 25px;
 }
 
+footer img {
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+}
 
 @media only screen and (max-width: 850px) {
     .subGlossary {
         margin-right: 50px;
     }
-}
+    
+@media only screen and (max-width: 500px) {
+    .columnBreak {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}}
