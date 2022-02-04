@@ -3,8 +3,14 @@ var $modal = $(".modal");
 var $zipModal = $(".zipModal");
 // Coords to center the map initially
 var coords = { lat: 47.6142, lng: -122.1937 };
+// geocoder for zip code to location conversations
 var geocoder;
+// Service to query community gardens
+var service;
+// The map to display them all
 var map;
+// Infowindow
+var infowindow;
 // Array to store the community garden markers
 var markers = [];
 // creating input variable and search button variable
@@ -12,6 +18,13 @@ var zipInput = document.querySelector("#zip");
 var searchBtn = document.querySelector("#button1");
 // will be used later to pull zip value
 var getZip;
+
+// Defines the request for community gardens
+var requestGardens = {
+  location: coords,
+  radius: '500', // Preferring results closer to the center point.
+  query: 'community garden',
+};
 
 // modal
 $modal.dialog({
@@ -43,41 +56,45 @@ var initMap = function () {
 
   geocoder = new google.maps.Geocoder();
 
-  const infowindow = new google.maps.InfoWindow();
-
-  function createMarker(place) {
-    if (!place.geometry || !place.geometry.location) return;
-
-    const marker = new google.maps.Marker({
-      map,
-      position: place.geometry.location,
-    });
-    // open a pop-up window to display address for the marker.
-    google.maps.event.addListener(marker, 'click', () => {
-      const content = document.createElement('div');
-      const nameElement = document.createElement('h2');
-      const addressElement = document.createElement('p');
-
-      nameElement.textContent = place.name;
-      addressElement.textContent = place.formatted_address;
-
-      content.appendChild(nameElement);
-      content.appendChild(addressElement);
-      infowindow.setContent(content);
-      infowindow.open(map, marker);
-    });
-    markers.push(marker);
-  };
-
-  var request = {
-    location: coords,
-    radius: '500', // Preferring results closer to the center point.
-    query: 'community garden',
-  };
+  infowindow = new google.maps.InfoWindow();
 
   service = new google.maps.places.PlacesService(map);
 
-  service.textSearch(request, (results, status) => {
+  getCommunityGardens(requestGardens);
+
+
+};
+
+var createMarker = function (place) {
+  if (!place.geometry || !place.geometry.location) return;
+
+  const marker = new google.maps.Marker({
+    map,
+    position: place.geometry.location,
+  });
+  // open a pop-up window to display address for the marker.
+  google.maps.event.addListener(marker, 'click', () => {
+    const content = document.createElement('div');
+    const nameElement = document.createElement('h2');
+    const addressElement = document.createElement('p');
+
+    nameElement.textContent = place.name;
+    addressElement.textContent = place.formatted_address;
+
+    content.appendChild(nameElement);
+    content.appendChild(addressElement);
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
+  });
+  markers.push(marker);
+};
+
+// Function to search community gardens and create markers for them.
+var getCommunityGardens = function (requestLocation) {
+  markers = [];
+  console.log(markers);
+  console.log(requestLocation);
+  service.textSearch(requestLocation, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK && results) {
       console.log(results.length);
       for (var i = 0; i < results.length; i++) {
@@ -85,7 +102,7 @@ var initMap = function () {
       }
     }
   });
-};
+}
 
 var geocode = function (request) {
   clear();
@@ -94,9 +111,12 @@ var geocode = function (request) {
       const { results } = result;
 
       map.setCenter(results[0].geometry.location);
-      //marker.setPosition(results[0].geometry.location);
-      // marker.setMap(map);
-      return results;
+      
+      console.log(results[0].geometry.location.lat());
+      requestGardens.location.lat = results[0].geometry.location.lat();
+      requestGardens.location.lng = results[0].geometry.location.lng();
+      console.log(requestGardens.location.lat);
+      getCommunityGardens(requestGardens);
     })
     .catch((e) => {
       alert("Geocode was not successful for the following reason: " + e);
