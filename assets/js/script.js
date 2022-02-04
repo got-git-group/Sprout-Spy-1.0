@@ -22,6 +22,8 @@ var getZip;
 var zoneResults = document.querySelector(".zoneResults");
 var results = document.querySelector(".results");
 
+getZip = localStorage.getItem('zip') || '98052';
+
 // Defines the request for community gardens
 var requestGardens = {
   location: coords,
@@ -63,8 +65,8 @@ var initMap = function () {
 
   service = new google.maps.places.PlacesService(map);
 
-  getCommunityGardens(requestGardens);
-
+  geocode({ address: getZip });
+  getAgZone(getZip);
 
 };
 
@@ -154,7 +156,7 @@ searchBtn.addEventListener("click", function (event) {
 
     console.log(getZip);
     // this is optional, if we don't want to store zipcodes we can scratch this
-    localStorage.setItem("zip", JSON.stringify(getZip));
+    localStorage.setItem("zip", getZip);
     geocode({ address: getZip });
     getAgZone(getZip);
     if ($zipModal.css('visibility') === 'hidden') {
@@ -173,7 +175,7 @@ searchBtn.addEventListener("click", function (event) {
 var getAgZone = function (getZip) {
   // stitch the zipcode into the API URL
   var agURL = "https://c0bra.api.stdlib.com/zipcode-to-hardiness-zone/?zipcode=" + getZip;
-
+  console.log(agURL);
   fetch(agURL)
   .then(function (response) {
     return response.json();
@@ -188,4 +190,3 @@ var getAgZone = function (getZip) {
     results.appendChild(link);
   });
 }
-
