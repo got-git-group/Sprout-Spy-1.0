@@ -156,6 +156,7 @@ searchBtn.addEventListener("click", function (event) {
     // this is optional, if we don't want to store zipcodes we can scratch this
     localStorage.setItem("zip", JSON.stringify(getZip));
     geocode({ address: getZip });
+    getAgZone(getZip);
     if ($zipModal.css('visibility') === 'hidden') {
       $zipModal.css('visibility', 'visible');
     } else {
@@ -168,7 +169,6 @@ searchBtn.addEventListener("click", function (event) {
   paraP = document.getElementById('hidden');
 }
 
-getAgZone(getZip);
 // API to pull agricultural zone
 var getAgZone = function (getZip) {
   // stitch the zipcode into the API URL
@@ -188,5 +188,4 @@ var getAgZone = function (getZip) {
     results.appendChild(link);
   });
 }
-
 
