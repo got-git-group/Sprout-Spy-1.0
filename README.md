@@ -47,7 +47,6 @@ This project is created with:
 
 ## Screenshot
 ![screenshot](./assets/images/localgarden.jpg)
-![screenshot](./assets/images/ insert img url here)
 
 ## Setup
 
