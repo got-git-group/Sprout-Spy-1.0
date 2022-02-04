@@ -11,26 +11,47 @@
 </head>
 
 <body>
-    
-    <!-- navbar and background image -->
-    <header class="hero" id="gardenImage">
-        <div id="instructions" class="jumbotron">
-            <div id="jumboContainer" class="container">
-                <img src="" alt="" srcset="" id="weather-icon">
-                <div id="location">weather fetch</div>
-                <div class="desc">description div</div>
-                <div class="weather">
-                    <div class="c">div .c</div>
-                    <div class="circle">div .circle</div>
-                    <div class="f">div .f</div>
+    <header id="weather-wrapper" >
+        <div class="wrapper">
+            <i class="bx bx-left-arrow-alt">Weather Forecast</i>
+            <section class="input-part">
+                <p class="info-txt">Please enter a valid city name</p>
+                <input type="text" placeholder="Enter city name" spellcheck="false" required>
+                <div class="separator"></div>
+                <button>Get Device Location</button>
+            </section>
+            <section class="weather-part">
+                <img src="./assets/images/png/001-sun.png" alt="Weather Icon">
+                <div class="temp">
+                    <span class="numb">26</span>
+                    <span class="deg">º</span>C
                 </div>
-                <div class= "info">
-                    <h1>Sunrise: <span class="sunrise">sunrise span</span></h1>
-                    <h1>Sunset: <span class="sunset">sunset span</span></h1>
+                <div class="weather">Broken Clouds</div>
+                <div class="location">
+                    <i class="iconify" data-icon="bx:bx-map"></i>
+                    <span>Tacoma, Washington</span>
                 </div>
-            </div>
+                <div class="bottom-details">
+                    <div class="column feels">
+                        <i class="iconify" data-icon="bx:bxs-thermometer"></i>
+                        <div class="details">
+                            <div class="temp">
+                                <span class="numb">24</span>
+                                <span class="deg">º</span>C
+                            </div>
+                            <p>Feels like</p>
+                        </div>
+                    </div>
+                    <div class="column humidity">
+                        <i class="iconify" data-icon="bx:bxs-droplet-half"></i>
+                        <div class="details">
+                            <span class="numb">69%</span>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        
         <img src="./assets/images/projectPhoto.jpg" style="width: 95vw; height: 475px;"></img>
     </header>
     
@@ -99,6 +120,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIbBrG_X6bfdgaSs7u-AHnysix2GZ86-4&libraries=places&callback=initMap"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>
