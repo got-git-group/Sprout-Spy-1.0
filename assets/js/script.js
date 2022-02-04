@@ -3,6 +3,10 @@ var $modal = $(".modal");
 var $zipModal = $(".zipModal");
 // Coords to center the map initially
 var coords = { lat: 47.6142, lng: -122.1937 };
+var geocoder;
+var map;
+// Array to store the community garden markers
+var markers = [];
 // creating input variable and search button variable
 var zipInput = document.querySelector("#zip");
 var searchBtn = document.querySelector("#button1");
@@ -37,8 +41,10 @@ var initMap = function () {
     zoom: 11
   });
 
+  geocoder = new google.maps.Geocoder();
+
   const infowindow = new google.maps.InfoWindow();
-  
+
   function createMarker(place) {
     if (!place.geometry || !place.geometry.location) return;
 
@@ -60,6 +66,7 @@ var initMap = function () {
       infowindow.setContent(content);
       infowindow.open(map, marker);
     });
+    markers.push(marker);
   };
 
   var request = {
@@ -80,24 +87,49 @@ var initMap = function () {
   });
 };
 
+var geocode = function (request) {
+  clear();
+  geocoder.geocode(request)
+    .then((result) => {
+      const { results } = result;
 
+      map.setCenter(results[0].geometry.location);
+      //marker.setPosition(results[0].geometry.location);
+      // marker.setMap(map);
+      return results;
+    })
+    .catch((e) => {
+      alert("Geocode was not successful for the following reason: " + e);
+    });
+}
 
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
 
+var clear = function () {
+  setMapOnAll(null);
+  markers = [];
+}
 
 // ZIPCODE INPUT
-searchBtn.addEventListener("click", function(event) {
+searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
   getZip = zipInput.value.trim();
   if (getZip.length !== 5) {
     // zipModal displays if zipcode entry is !5 character
     $zipModal.dialog({
-    modal: true,
-    minWidth: 400,
-    }) 
+      modal: true,
+      minWidth: 400,
+    })
   } else {
-      console.log(getZip);
-  // this is optional, if we don't want to store zipcodes we can scratch this
-  localStorage.setItem("zip", JSON.stringify(getZip));
+    console.log(getZip);
+    // this is optional, if we don't want to store zipcodes we can scratch this
+    localStorage.setItem("zip", JSON.stringify(getZip));
+    geocode({address: getZip })
   };
-  
+
 });
