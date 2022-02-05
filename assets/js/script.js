@@ -21,6 +21,7 @@ var getZip;
 // variables for displaying zone results and creating appropriate link
 var zoneResults = document.querySelector(".zoneResults");
 var results = document.querySelector(".results");
+var zoneLink = document.querySelector("#zoneLink");
 
 getZip = localStorage.getItem('zip') || '98052';
 
@@ -184,9 +185,8 @@ var getAgZone = function (getZip) {
     console.log(data)
     zoneResults.textContent = "You live in Zone " + data.zone + "!";
     // generate link to zone growing info
-    var link = document.createElement("a");
-    link.href = "https://www.gardenate.com/?zone=" + data.zone;
-    link.innerText = "Click here to see what you can grow in your zone!";
-    results.appendChild(link);
+    zoneLink.href = "https://www.gardenate.com/?zone=" + data.zone;
+    zoneLink.target = "_blank";
+    zoneLink.innerText = "Click here to see what you can grow in your zone!";
   });
-}
+};
