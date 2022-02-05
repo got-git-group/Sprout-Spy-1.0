@@ -1,16 +1,6 @@
 // creating Welcome modal and zipmodal variable
 var $modal = $(".modal");
 var $zipModal = $(".zipModal");
-// Coords to center the map initially
-var coords = { lat: 47.6142, lng: -122.1937 };
-// geocoder for zip code to location conversations
-var geocoder;
-// Service to query community gardens
-var service;
-// The map to display them all
-var map;
-// Infowindow
-var infowindow;
 // Array to store the community garden markers
 var markers = [];
 // creating input variable and search button variable
@@ -52,24 +42,12 @@ $modal.dialog({
   minWidth: 400,
 });
 
-// Google maps
-var initMap = function () {
-
-  map = new google.maps.Map(document.getElementById('localgardenmap'), {
-    center: coords,
-    zoom: 11
-  });
-
-  geocoder = new google.maps.Geocoder();
-
-  infowindow = new google.maps.InfoWindow();
-
-  service = new google.maps.places.PlacesService(map);
-
+var init = function () {
   geocode({ address: getZip });
   getAgZone(getZip);
+}
 
-};
+
 
 var createMarker = function (place) {
   if (!place.geometry || !place.geometry.location) return;
@@ -190,3 +168,7 @@ var getAgZone = function (getZip) {
     zoneLink.innerText = "Click here to see what you can grow in your zone!";
   });
 };
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  init();
+});
