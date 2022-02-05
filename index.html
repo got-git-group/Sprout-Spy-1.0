@@ -15,9 +15,9 @@
     <h1 class="headerT">Sprout Spy</h1>
     <img src="./assets/images/favicon.png">
     </div>
-    <header id="weather-wrapper">
+    <header id="weather-wrap">
         <div class="wrapper weather-wrapper">
-            <i class="bx bx-left-arrow-alt">Weather Forecast</i>
+            <i class="iconify" data-icon="bx:bx-left-arrow-alt">Weather Report</i>
             <section class="input-part">
                 <p class="info-txt">Please enter a valid city name</p>
                 <input type="text" placeholder="Enter city name" spellcheck="false" required>
@@ -27,21 +27,21 @@
             <section class="weather-part">
                 <img src="./assets/images/png/001-sun.png" alt="Weather Icon">
                 <div class="temp">
-                    <span class="numb">26</span>
-                    <span class="deg">º</span>C
+                    <span id="temperature" class="numb">26</span>
+                    <span class="deg">º</span>F
                 </div>
                 <div class="weather">Broken Clouds</div>
                 <div class="location">
                     <i class="iconify" data-icon="bx:bx-map"></i>
-                    <span>Tacoma, Washington</span>
+                    <span id="weather-location">Tacoma</span>
                 </div>
                 <div class="bottom-details">
                     <div class="column feels">
                         <i class="iconify" data-icon="bx:bxs-thermometer"></i>
                         <div class="details">
                             <div class="temp">
-                                <span class="numb">24</span>
-                                <span class="deg">º</span>C
+                                <span id="feels-like" class="numb">24</span>
+                                <span class="deg">º</span>F
                             </div>
                             <p>Feels like</p>
                         </div>
@@ -49,10 +49,9 @@
                     <div class="column humidity">
                         <i class="iconify" data-icon="bx:bxs-droplet-half"></i>
                         <div class="details">
-                            <span class="numb">69%</span>
+                            <span id="humidity" class="numb">69</span>%
                             <p>Humidity</p>
                         </div>
-                        <p>Feels like</p>
                     </div>
                 </div>
             </section>

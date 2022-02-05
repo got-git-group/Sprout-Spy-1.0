@@ -53,14 +53,14 @@ body {
             
 }
 
-.weather-wrapper {
+header .wrapper {
     width: 400px;
     border-radius: 7px;
     background-color: #b9e6de;
     opacity: 0.8;
 }
 
-.weather-wrapper .wrapper i {
+.weather-wrapper i {
     color: dodgerblue;
     font-size: 25px;
     font-weight: 600;
@@ -70,13 +70,13 @@ body {
     border-bottom: 1px solid #bfbfbf;
 }
 
-header .wrapper i {
+.wrapper header i {
     cursor: pointer;
     font-size: 30px;
     margin-right: 8px;
 }
 
-#weather-wrapper .wrapper .input-part {
+#weather-wrap .wrapper .input-part {
     display: none;
     margin: 18px 24px 28px;
     font-size: 12px;
@@ -91,7 +91,7 @@ header .wrapper i {
     border-radius: 7px;
 }
 
-#weather-wrapper .wrapper .input-part input{
+#weather-wrap .wrapper .input-part input{
     text-align: center;
     border: 1px solid #bfbfbf;
 }
