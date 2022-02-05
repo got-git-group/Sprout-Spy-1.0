@@ -43,6 +43,7 @@ $modal.dialog({
 });
 
 var init = function () {
+  $zipModal.hide();
   geocode({ address: getZip });
   getAgZone(getZip);
 }
