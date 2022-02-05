@@ -76,6 +76,11 @@ header .wrapper {
     margin-right: 8px;
 }
 
+.wrapper.active header i { 
+    margin-left: 5px;
+    font-size: 20px;
+}
+
 #weather-wrap .wrapper .input-part {
     display: none;
     margin: 18px 24px 28px;
@@ -204,9 +209,36 @@ header .wrapper {
     justify-content: center;
 }
 
-.column .iconify {
+.bottom-details .iconify {
     color: dodgerblue;
-    font-size: 25px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.humidity {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #bfbfbf;
+}
+
+.details .temp {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.details .temp .deg {
+    margin: 0;
+    font-size: 15px;
+    
+}
+ 
+.bottom-details {
+justify-content: center;
+}
+
+.details p {
+    font-size: 15px;
+    margin-top: -2px;
 }
 
 /* .column.humidity {
