@@ -12,6 +12,8 @@ var getZip;
 var zoneResults = document.querySelector(".zoneResults");
 var results = document.querySelector(".results");
 var zoneLink = document.querySelector("#zoneLink");
+// variable to store city name
+var cityName = "";
 
 getZip = localStorage.getItem('zip') || '98052';
 
@@ -46,6 +48,7 @@ var init = function () {
   $zipModal.hide();
   geocode({ address: getZip });
   getAgZone(getZip);
+  getWeatherData(requestGardens);
 }
 
 
@@ -97,16 +100,35 @@ var geocode = function (request) {
 
       map.setCenter(results[0].geometry.location);
 
-
+      cityName = results[0].address_components[1].long_name;
+      console.log(cityName);
       console.log(results[0].geometry.location.lat());
       requestGardens.location.lat = results[0].geometry.location.lat();
       requestGardens.location.lng = results[0].geometry.location.lng();
       console.log(requestGardens.location.lat);
       getCommunityGardens(requestGardens);
+      getWeatherData(requestGardens);
     })
     .catch((e) => {
       alert("Geocode was not successful for the following reason: " + e);
     });
+}
+var getWeatherData = function (requestGardens) {
+  console.log(requestGardens);
+  fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + requestGardens.location.lat + '&lon=' + requestGardens.location.lng + '&units=imperial&appid=fd8dcdd160b0be1f8103a8b54146c418')
+  .then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data);
+    var Numb = document.querySelector("#temperature");
+    Numb.textContent = Math.ceil(data.current.temp);
+    Numb = document.querySelector("#feels-like")
+    Numb.textContent = Math.ceil(data.current.feels_like);
+    Numb = document.querySelector("#humidity");
+    Numb.textContent = Math.ceil(data.current.humidity);
+    Numb = document.querySelector("#weather-location");
+    Numb.textContent = cityName;
+  })
 }
 
 // Sets the map on all markers in the array.
@@ -139,6 +161,7 @@ searchBtn.addEventListener("click", function (event) {
     localStorage.setItem("zip", getZip);
     geocode({ address: getZip });
     getAgZone(getZip);
+    // getWeatherData(requestGardens);
     if ($zipModal.css('visibility') === 'hidden') {
       $zipModal.css('visibility', 'visible');
     } else {
