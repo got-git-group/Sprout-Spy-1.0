@@ -132,7 +132,7 @@ var getWeatherData = function (requestGardens) {
 }
 
 // Sets the map on all markers in the array.
-function setMapOnAll(map) {
+var setMapOnAll = function (map) {
 	for (let i = 0; i < markers.length; i++) {
 		markers[i].setMap(map);
 	}
@@ -145,7 +145,7 @@ var clear = function () {
 
 
 // ZIPCODE INPUT
-searchBtn.addEventListener('click', function (event) {
+searchBtn.addEventListener('click', (event) => {
 	event.preventDefault();
 	getZip = zipInput.value.trim();
 	if (getZip.length !== 5) {
